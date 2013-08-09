@@ -68,7 +68,7 @@ a.logo {
 .block-region,
 #region-main,
 .breadcrumb {
-	background: url([[pix:theme|dark]]) repeat transparent !important;
+	background: url([[setting:colorscheme]]) repeat transparent !important;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;

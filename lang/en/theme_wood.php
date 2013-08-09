@@ -30,7 +30,8 @@ $string['choosereadme'] = '
 </div>
 <div class="well">
 <h3>About</h3>
-<p>wood is a modified Moodle bootstrap theme which inherits styles and renderers from its parent theme.</p>
+<p>Wood is a modified Moodle bootstrap theme which inherits styles and renderers from its parent theme.</p>
+<p>In Moodle 1.9 Wood was always my most hated theme. It was so tacky and unnecesary.
 <h3>Parents</h3>
 <p>This theme is based upon the Bootstrap theme, which was created for Moodle 2.5, with the help of:<br>
 Stuart Lamour, Mark Aberdour, Paul Hibbitts, Mary Evans.</p>
@@ -49,6 +50,11 @@ $string['configtitle'] = 'wood';
 
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
+
+$string['colorscheme'] = 'Colour Scheme';
+$string['colorschemedesc'] = 'Depending on the background image you use you may wish to use a Light or Dark color scheme.';
+$string['light'] = 'Light';
+$string['dark'] = 'Dark';
 
 $string['footnote'] = 'Footnote';
 $string['footnotedesc'] = 'Whatever you add to this textarea will be displayed in the footer throughout your Moodle site.';

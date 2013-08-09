@@ -39,6 +39,19 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
+    
+    // Set color scheme
+	$name = 'theme_wood/colorscheme';
+	$title = get_string('colorscheme','theme_wood');
+	$description = get_string('colorschemedesc', 'theme_wood');
+	$default = 'dark';
+	$choices = array(
+		'dark' => get_string('dark', 'theme_wood'),
+		'light' => get_string('light', 'theme_wood')
+	);
+	$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+	$setting->set_updatedcallback('theme_reset_all_caches');
+	$settings->add($setting);
 
     // Logo file setting.
     $name = 'theme_wood/logo';

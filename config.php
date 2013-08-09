@@ -54,6 +54,7 @@ $THEME->plugins_exclude_sheets = array(
 );
 
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
+
 $THEME->csspostprocess = 'theme_wood_process_css';
 
 $THEME->blockrtlmanipulations = array(

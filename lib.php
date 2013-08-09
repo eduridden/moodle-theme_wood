@@ -20,6 +20,55 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+function theme_wood_process_css($css, $theme) {
+
+    // Set the font path.
+    $css = theme_wood_set_fontwww($css);
+    return $css;
+    
+    //Get color scheme type from settings
+    if (!empty($theme->settings->colorscheme)) {
+        $colorscheme = $theme->settings->colorscheme;
+    } else {
+        $colorscheme = null;
+    }
+    $css = theme_wood_set_colorscheme($css, $colorscheme);
+    return $css;
+    
+    
+    // Set the background image for the logo.
+    $logo = $theme->setting_file_url('logo', 'logo');
+    $css = theme_wood_set_logo($css, $logo);
+
+    // Set custom CSS.
+    if (!empty($theme->settings->customcss)) {
+        $customcss = $theme->settings->customcss;
+    } else {
+        $customcss = null;
+    }
+    $css = theme_wood_set_customcss($css, $customcss);
+    return $css;
+}
+
+/**
+ * Adds the logo to CSS.
+ *
+ * @param string $css The CSS.
+ * @param string $logo The URL of the logo.
+ * @return string The parsed CSS
+ */
+function theme_wood_set_logo($css, $logo) {
+    $tag = '[[setting:logo]]';
+    $replacement = $logo;
+    if (is_null($replacement)) {
+        $replacement = '';
+    }
+
+    $css = str_replace($tag, $replacement, $css);
+
+    return $css;
+}
+
 /**
  * Parses CSS before it is cached.
  *
@@ -41,43 +90,29 @@ function theme_wood_set_fontwww($css) {
     return $css;
 }
 
-function theme_wood_process_css($css, $theme) {
-
-    // Set the font path.
-    $css = theme_wood_set_fontwww($css);
-    return $css;
-    
-    // Set the background image for the logo.
-    $logo = $theme->setting_file_url('logo', 'logo');
-    $css = theme_wood_set_logo($css, $logo);
-
-    // Set custom CSS.
-    if (!empty($theme->settings->customcss)) {
-        $customcss = $theme->settings->customcss;
-    } else {
-        $customcss = null;
-    }
-    $css = theme_wood_set_customcss($css, $customcss);
-
-    return $css;
-}
-
 /**
- * Adds the logo to CSS.
+ * Sets the background color for blocks, navbar, etc.
  *
- * @param string $css The CSS.
- * @param string $logo The URL of the logo.
- * @return string The parsed CSS
+ * @param string $css
+ * @param mixed $colorscheme
+ * @return string
  */
-function theme_wood_set_logo($css, $logo) {
-    $tag = '[[setting:logo]]';
-    $replacement = $logo;
-    if (is_null($replacement)) {
-        $replacement = '';
+function theme_wood_set_colorscheme($css, $colorscheme) {
+    $tag = '[[setting:colorscheme]]';
+    switch($colorscheme) { //Get value from Settings Page
+        default:
+            $replacement = '[[pix:theme|bg/dark]]'; //Default value
+            break;
+
+        case 'dark':
+            $replacement = '[[pix:theme|bg/dark]]'; //Dark
+            break;
+
+        case 'light':
+            $replacement = '[[pix:theme|bg/light]]'; //White
+            break;
     }
-
     $css = str_replace($tag, $replacement, $css);
-
     return $css;
 }
 
@@ -152,31 +187,4 @@ function theme_wood_get_html_for_settings(renderer_base $output, moodle_page $pa
     }
 
     return $return;
-}
-
-/**
- * Deprecated: Please call theme_wood_process_css instead.
- * @deprecated since 2.5.1
- */
-function wood_process_css($css, $theme) {
-    debugging('Please call theme_'.__FUNCTION__.' instead of '.__FUNCTION__, DEBUG_DEVELOPER);
-    return theme_wood_process_css($css, $theme);
-}
-
-/**
- * Deprecated: Please call theme_wood_set_logo instead.
- * @deprecated since 2.5.1
- */
-function wood_set_logo($css, $logo) {
-    debugging('Please call theme_'.__FUNCTION__.' instead of '.__FUNCTION__, DEBUG_DEVELOPER);
-    return theme_wood_set_logo($css, $logo);
-}
-
-/**
- * Deprecated: Please call theme_wood_set_customcss instead.
- * @deprecated since 2.5.1
- */
-function wood_set_customcss($css, $customcss) {
-    debugging('Please call theme_'.__FUNCTION__.' instead of '.__FUNCTION__, DEBUG_DEVELOPER);
-    return theme_wood_set_customcss($css, $customcss);
 }
