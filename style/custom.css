@@ -68,7 +68,7 @@ a.logo {
 .block-region,
 #region-main,
 .breadcrumb {
-	background: url([[pix:theme|black50]]) repeat transparent !important;
+	background: url([[pix:theme|dark]]) repeat transparent !important;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -96,7 +96,7 @@ a.logo {
   -moz-box-shadow: inset 0px 1px 5px #111;
   -webkit-box-shadow: inset 0px 1px 5px #111;
   box-shadow: inset 0px 1px 5px #111;
-  background: url([[pix:theme|black50]]) repeat transparent !important;
+  background: url([[pix:theme|dark]]) repeat transparent !important;
 }
 
 .courses .coursebox.even,
@@ -106,7 +106,7 @@ a.logo {
 }
 
 .navbar-inner {
-	background: url([[pix:theme|black50]]) repeat transparent !important;
+	background: url([[pix:theme|dark]]) repeat transparent !important;
 	border: 0px none;
 	padding: 5px;
 	padding-bottom: 0px;
