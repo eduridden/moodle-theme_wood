@@ -1,0 +1,132 @@
+/* Custom CSS
+-------------------------*/
+@font-face {
+    font-family: 'FontAwesome'; 
+    font-weight: normal;
+    font-style: normal;
+    src: url('[[setting:fontwww]]fontawesome-webfont.eot?v=3.2.1');
+    src: url('[[setting:fontwww]]fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), 
+      			url('[[setting:fontwww]]fontawesome-webfont.woff?v=3.2.1') format('woff'), 
+      			url('[[setting:fontwww]]fontawesome-webfont.ttf?v=3.2.1') format('truetype'), 
+      			url('[[setting:fontwww]]fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+
+@font-face {
+	font-family: League-Gothic;
+	font-weight: normal;
+	font-style: normal;
+	src: url('[[setting:fontwww]]LeagueGothic-Regular.otf') format('opentype');
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Lato", arial, serif;
+    font-weight: normal !important;
+    color: rgba(238,238,238,0.7);
+}
+
+body {
+	background: #3D3D3D url([[pix:theme|wood/1]]) repeat fixed;
+	background-size: cover;
+	margin-top: 0px;
+}
+
+#page {
+	color: #EEEEEE;
+}
+
+#page-header h1 {
+	color: rgba(204,204,204,0.6);
+	font-size: 3.9em;
+	margin-bottom: 15px;
+	font-family: "League-Gothic", Courier;
+	text-transform: uppercase;
+}
+
+a.logo {
+    background: url([[setting:logo]]) no-repeat 0 0;
+    display: block;
+    float: left;
+    height: 75px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.dir-rtl a.logo {
+    background: url([[setting:logo]]) no-repeat 100% 0;
+    display: block;
+    float: right;
+}
+
+.block-region,
+#region-main,
+.breadcrumb {
+	background: url([[pix:theme|black50]]) repeat transparent !important;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	moz-box-shadow: inset 0px 5px 10px #111;
+	-webkit-box-shadow: inset 0px 5px 10px #111;
+	box-shadow: inset 0px 5px 10px #111;
+}
+
+.block .header .title h2 {
+	font-size: .95em;
+}
+
+.nav-pills>li>a{
+  color: rgba(238,238,238,0.7);
+  font-family: "Lato", arial, serif;
+  line-height: 1em;
+  font-size: .95em;
+  text-transform: uppercase;
+  font-weight: lighter !important;
+  padding: 15px;
+}
+
+.nav-pills>li>a:hover{
+  color: #acada8 !important;
+  -moz-box-shadow: inset 0px 1px 5px #111;
+  -webkit-box-shadow: inset 0px 1px 5px #111;
+  box-shadow: inset 0px 1px 5px #111;
+  background: url([[pix:theme|black50]]) repeat transparent !important;
+}
+
+.courses .coursebox.even,
+.courses .coursebox:hover,
+.course_category_tree .category>.info {
+	background: transparent;
+}
+
+.navbar-inner {
+	background: url([[pix:theme|black50]]) repeat transparent !important;
+	border: 0px none;
+	padding: 5px;
+	padding-bottom: 0px;
+}
+
+.navbar .brand,
+.navbar .nav>li>a,
+.main-nav a {
+	color: #acada8;
+}
+
+#region-main {
+	padding: 0px 20px;
+}
+
+.block {
+	background: transparent;
+	border: 0px none;
+}
+
+/* Custom CSS Settings
+-------------------------*/
+[[setting:customcss]]
